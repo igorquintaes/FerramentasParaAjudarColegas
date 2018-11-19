@@ -36,7 +36,9 @@ namespace CampoTreinamento.BaixarCapitulos
                     }
 
                     var extension = imageLink.Split('.').Last();
-                    var fileName = count + "." + extension;
+                    var numeroArquivo = count.ToString().PadLeft(2, '0');
+
+                    var fileName = numeroArquivo + "." + extension;
                     using (var client = new WebClient())
                     {
                         client.DownloadFile(imageLink, fileName);
